@@ -74,3 +74,8 @@
         (om/build tracker-table app))))
   app-state
   {:target (. js/document (getElementById "app"))})
+
+(swap!
+  app-state assoc :rows
+  (conj (:rows @app-state)
+        {:id 4 :name "hello" :episode 4 :last-viewed "22-Jan-14"}))
